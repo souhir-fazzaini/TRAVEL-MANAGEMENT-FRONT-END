@@ -1,0 +1,7 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table td:not(:last-child) {
+  padding-right: 10px; /* Ajustez la valeur du padding selon vos besoins */
+}

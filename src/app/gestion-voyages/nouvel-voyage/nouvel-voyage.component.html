@@ -1,0 +1,34 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <br>
+  <br>
+  <h2>Ajouter un voyage</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group row">
+    <div class="form-group col-md-6">
+      <label for="destination">Destination</label>
+      <input type="text" class="form-control" id="destination" [(ngModel)]="voyage.destination" name="destination" placeholder="destination">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="Nombre_de_places">Nombre de places</label>
+      <input type="int" class="form-control" [(ngModel)]="voyage.nbre_place_disponible" id="Nombre_de_places" name="Nombre_de_places" placeholder="Nombre_de_places">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Prix">Prix</label>
+    <input type="int" class="form-control" [(ngModel)]="voyage.prix" id="Prix" name="prix" placeholder="Prix">
+  </div>
+  <div class="form-group">
+    <label for="Date_debut">Date_debut</label>
+    <input type="Date" class="form-control" [(ngModel)]="voyage.date_debut" id="Date_debut" name="Date_debut" placeholder="Date_debut">
+  </div>
+  <div class="form-group">
+    <label for="Date_fin">Date_fin</label>
+    <input type="Date" class="form-control" [(ngModel)]="voyage.date_fin" id="Date_fin"  name="Date_fin" placeholder="Date_fin">
+  </div>
+
+
+
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>

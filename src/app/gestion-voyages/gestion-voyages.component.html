@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<div class="table-container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Date_debut</th>
+      <th>Date_fin</th>
+      <th>Destination</th>
+      <th>Prix</th>
+      <th>Nombre_places</th>
+      <th>Buttons</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor= "let voyage of voyages" >
+     <td>{{voyage.id}}</td>
+      <td>{{voyage.date_debut}}</td>
+      <td>{{voyage.date_fin}}</td>
+      <td>{{voyage.destination}}</td>
+      <td>{{voyage.prix}}</td>
+      <td>{{voyage.nbre_place_disponible}}</td>
+      <td>
+        <button type="button" class="btn btn-link" (click)="modifiervoyage(voyage.id)">
+        <fa-icon [icon]="faPencil"></fa-icon></button>
+        <button type="button" class="btn btn-link">
+        <fa-icon [icon]="faTrash"></fa-icon></button>
+      </td>
+
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
