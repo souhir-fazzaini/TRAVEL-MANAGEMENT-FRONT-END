@@ -20,12 +20,12 @@ export class GestionVoyagesComponent implements OnInit {
 
   ngOnInit() {
     console.log("hello")
-    this.voyageservice.getAllVoyages().subscribe(datas => {
+   /* this.voyageservice.getAllVoyages().subscribe(datas => {
       this.voyages = datas as any[];
 
 
 
-    })
+    })*/
 
 
   }
