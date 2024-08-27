@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Voyage} from "../../voyage";
-import {VoyageserviceService} from "../../services/voyageservice.service";
+import {VoyageService} from "../../services/voyage.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {error} from "ng-packagr/lib/utils/log";
 
@@ -14,18 +14,18 @@ export class ModifierVoyageComponent implements OnInit{
   voyage: Voyage = new Voyage();
   private routeur: Router;
 
-  constructor(private voyageservice: VoyageserviceService, private route: ActivatedRoute) {
+  constructor(private voyageservice: VoyageService, private route: ActivatedRoute) {
   }
   ngOnInit(): void {
     this.id=this.route.snapshot.params["id"]
 
-    this.voyageservice.getvoyageById(this.id).subscribe(data => {
+    this.voyageservice.getVoyageById(this.id).subscribe(data => {
       this.voyage = data;
     });
   }
   updatevoyage()
   {
-    this.voyageservice.updatevoyage(this.id,this.voyage).subscribe(data => {
+    this.voyageservice.updateVoyage(this.id,this.voyage).subscribe(data => {
       console.log(data)
       this.goToVoyageList()
     }),

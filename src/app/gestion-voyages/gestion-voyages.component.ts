@@ -1,25 +1,26 @@
 import {Component, NgIterable} from '@angular/core';
-import {VoyageserviceService} from "../services/voyageservice.service";
+
 import { OnInit } from "@angular/core";
 import {faPencil, fas, faShop, faTrash} from '@fortawesome/free-solid-svg-icons';
 import {Router} from "@angular/router";
+import {VoyageService} from "../services/voyage.service";
 @Component({
   selector: 'app-gestion-voyages',
   templateUrl: './gestion-voyages.component.html',
   styleUrls: ['./gestion-voyages.component.scss'],
-  providers: [ VoyageserviceService ]
+  providers: [ VoyageService ]
 })
 export class GestionVoyagesComponent implements OnInit {
 
   voyages: any[];
 
-  constructor(private voyageservice: VoyageserviceService,private routeur: Router) {
+  constructor(private voyageservice: VoyageService,private routeur: Router) {
 
   }
 
   ngOnInit() {
     console.log("hello")
-    this.voyageservice.getvoyages().subscribe(datas => {
+    this.voyageservice.getAllVoyages().subscribe(datas => {
       this.voyages = datas as any[];
 
 

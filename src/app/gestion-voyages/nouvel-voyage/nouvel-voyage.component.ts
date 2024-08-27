@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Voyage} from "../../voyage";
-import {VoyageserviceService} from "../../services/voyageservice.service";
+import {VoyageService} from "../../services/voyage.service";
 import {Router} from "@angular/router";
 import {error} from "ng-packagr/lib/utils/log";
 
@@ -11,14 +11,14 @@ import {error} from "ng-packagr/lib/utils/log";
 })
 export class NouvelVoyageComponent implements OnInit{
   voyage: Voyage =  new Voyage()
-  constructor(private voyageservice: VoyageserviceService,private routeur: Router) {
+  constructor(private voyageservice: VoyageService,private routeur: Router) {
   }
   ngOnInit(): void
   {
 
   }
   savevoyage() {
-    this.voyageservice.createvoyage(this.voyage).subscribe(data => {
+    this.voyageservice.createVoyage(this.voyage).subscribe(data => {
       console.log(data)
       this.goToVoyageList()
     }),
