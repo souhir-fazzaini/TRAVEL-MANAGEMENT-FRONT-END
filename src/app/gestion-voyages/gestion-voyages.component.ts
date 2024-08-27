@@ -3,7 +3,7 @@ import {Component, NgIterable} from '@angular/core';
 import { OnInit } from "@angular/core";
 import {faPencil, fas, faShop, faTrash} from '@fortawesome/free-solid-svg-icons';
 import {Router} from "@angular/router";
-import {VoyageService} from "../services/voyage.service";
+import {VoyageService} from "./voyage.service";
 @Component({
   selector: 'app-gestion-voyages',
   templateUrl: './gestion-voyages.component.html',

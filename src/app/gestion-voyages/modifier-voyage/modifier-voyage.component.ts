@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Voyage} from "../../voyage";
-import {VoyageService} from "../../services/voyage.service";
+import {VoyageService} from "../voyage.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {error} from "ng-packagr/lib/utils/log";
 
